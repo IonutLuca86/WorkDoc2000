@@ -87,19 +87,26 @@ namespace WorkDoc2000
         private void formatTxt_Click(object sender, RoutedEventArgs e)
         {
             string inputText = myTextBox.Text;
-            //string[] mening = inputText.Split(new string[] {". ","\r\n","\r","\n"},StringSplitOptions.None);
-            string[] mening = Regex.Split(inputText, @"([.\s]|[\r|\n|\r\n] )");
+            string[] mening = inputText.Split(new string[] {". ","\r\n","\r","\n"},StringSplitOptions.None);
+            //string[] mening = Regex.Split(inputText, @"([.\s]|[\r|\n|\r\n] )");
             string inputText2 = string.Empty;
             foreach (string str in mening)
             {
-                if(char.IsUpper(str.First()))
+                if (char.IsUpper(str.First()))
                     inputText2 = str;
+                else if (str.EndsWith('.'))
+                    inputText2 += str;
                 else
-                inputText2 +=  str.First().ToString().ToUpper() + str.Substring(1);
+                inputText2 +=  str.First().ToString().ToUpper() + str.Substring(1) + ". ";
             }
             //inputText2 = mening.Select(m => m[0].ToString().ToUpper() + m.Substring(1).ToLower());
             myTextBox.Text = inputText2;
 
+        }
+
+        private void chancheTxt_Click(object sender, RoutedEventArgs e)
+        {
+            myTextBox.Text = myTextBox.Text.Replace('e', '3').Replace('a', '4').Replace('s', '5');
         }
         //public static String CapitalizeAndStuff(string startingString)
         //{
