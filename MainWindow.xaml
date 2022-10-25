@@ -1,0 +1,31 @@
+﻿<Window x:Class="WorkDoc2000.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkDoc2000"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="WorkDoc2000!" HorizontalContentAlignment="Center" FontSize="28" Grid.Row="1" Grid.ColumnSpan="4"></Label>
+        <Label Content="Skriv ditt text här:" HorizontalContentAlignment="Center" FontSize="12" Grid.Row="2" Grid.Column="1"></Label>
+        <TextBox Name="myTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="310" Margin="21,34,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="453"/>
+        <Button Name="antalOrdBtn" Grid.Column="2" Content="Räkna ord" HorizontalAlignment="Left" Margin="50,34,0,0" Grid.Row="2" VerticalAlignment="Top" Width="163" Height="25" Click="antalOrdBtn_Click"/>
+        <Button Name="skrivFileBtn" Grid.Column="2" Content="Skriv i Fil" HorizontalAlignment="Left" Margin="50,79,0,0" Grid.Row="2" VerticalAlignment="Top" Width="163" Height="25" Click="skrivFileBtn_Click"/>
+        <Button Name="loadFileBtn" Grid.Column="2" Content="Läs från Fil" HorizontalAlignment="Left" Margin="50,121,0,0" Grid.Row="2" VerticalAlignment="Top" Width="163" Height="25" Click="loadFileBtn_Click"/>
+        <Button Name="transformBtn" Grid.Column="2" Content="Text liten till STOR" HorizontalAlignment="Left" Margin="50,172,0,0" Grid.Row="2" VerticalAlignment="Top" Width="163" Height="25" RenderTransformOrigin="0.491,-0.248" Click="transformBtn_Click"/>
+        <Button Name="formatTxt" Grid.Column="2" Content="Formatera Text" HorizontalAlignment="Left" Margin="50,222,0,0" Grid.Row="2" VerticalAlignment="Top" Width="163" Height="25" Click="formatTxt_Click"/>
+    </Grid>
+</Window>
